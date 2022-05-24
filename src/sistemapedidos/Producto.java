@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sistemapedidos;
+
+/**
+ *
+ * @author eduar
+ */
+public class Producto {
+
+    private String codProducto;
+    private String nombre;
+    private Integer cantidad;
+    private String color;
+    private Character talla;
+    private Float precio;
+
+    public Producto(String codProducto, String nombre, Integer cantidad, String color, char talla) {
+        this.codProducto = codProducto;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.color = color;
+        this.talla = talla;
+        this.precio =0f;
+    }
+
+    public String getCodProducto() {
+        return codProducto;
+    }
+
+    public void setCodProducto(String codProducto) {
+        this.codProducto = codProducto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Character getTalla() {
+        return talla;
+    }
+
+    public void setTalla(Character talla) {
+        this.talla = talla;
+    }
+
+    public Float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+    
+}
