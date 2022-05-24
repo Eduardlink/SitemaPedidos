@@ -8,6 +8,7 @@ package sistemapedidos;
 import java.awt.Component;
 import java.util.LinkedList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +23,7 @@ public class Principal extends javax.swing.JFrame {
     private String[] filaTabla;
     private Comprador comprador;
     private DefaultComboBoxModel modelo;
+    private DefaultComboBoxModel modeloColores;
 
     /**
      * Creates new form Principal
@@ -137,10 +139,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jbtnGuardarProducto = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jtxtSoloNumeros4 = new componentespropios.jtxtSoloNumeros();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jbtnGuardarDescripcion = new javax.swing.JButton();
+        jcbxTallaDescripcion = new javax.swing.JComboBox<>();
+        jtxtCantidadDescripcion = new componentespropios.jtxtSoloNumeros();
+        jcbxColorDescripcion = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -311,7 +313,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jtxtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnGuardarUsuario))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -328,21 +330,30 @@ public class Principal extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
         jLabel16.setText("Color");
 
-        jbtnGuardarProducto.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
-        jbtnGuardarProducto.setText("GUARDAR");
-        jbtnGuardarProducto.addActionListener(new java.awt.event.ActionListener() {
+        jbtnGuardarDescripcion.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
+        jbtnGuardarDescripcion.setText("GUARDAR");
+        jbtnGuardarDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnGuardarProductoActionPerformed(evt);
+                jbtnGuardarDescripcionActionPerformed(evt);
             }
         });
 
-        jComboBox2.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "M", "L" }));
+        jcbxTallaDescripcion.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
+        jcbxTallaDescripcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "M", "L" }));
+        jcbxTallaDescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbxTallaDescripcionActionPerformed(evt);
+            }
+        });
 
-        jtxtSoloNumeros4.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
+        jtxtCantidadDescripcion.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
 
-        jComboBox3.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Amarillo", "Azul", "Rojo" }));
+        jcbxColorDescripcion.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
+        jcbxColorDescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbxColorDescripcionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -353,23 +364,23 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbxTallaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14))
                         .addGap(85, 85, 85)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
-                                    .addComponent(jtxtSoloNumeros4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jtxtCantidadDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(89, 89, 89)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcbxColorDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel16)))
-                            .addComponent(jbtnGuardarProducto)))
+                            .addComponent(jbtnGuardarDescripcion)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(192, 192, 192)
                         .addComponent(jLabel12)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,11 +394,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxtSoloNumeros4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtCantidadDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbxTallaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbxColorDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jbtnGuardarProducto)
+                .addComponent(jbtnGuardarDescripcion)
                 .addContainerGap())
         );
 
@@ -450,12 +461,11 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(241, 241, 241))
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel22)
@@ -528,6 +538,11 @@ public class Principal extends javax.swing.JFrame {
 
         jchkAmarillo.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
         jchkAmarillo.setText("Amarillo");
+        jchkAmarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jchkAmarilloActionPerformed(evt);
+            }
+        });
 
         jchkAzul.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
         jchkAzul.setText("Azul");
@@ -549,6 +564,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel11.setText("Cantidad");
 
         jtxtCantidadAmarillo.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
+        jtxtCantidadAmarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtCantidadAmarilloActionPerformed(evt);
+            }
+        });
 
         jtxtCantidadAzul.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
 
@@ -564,6 +584,11 @@ public class Principal extends javax.swing.JFrame {
 
         jtxtCantidadTotal.setEditable(false);
         jtxtCantidadTotal.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
+        jtxtCantidadTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtCantidadTotalActionPerformed(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -725,37 +750,157 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jchkRojoActionPerformed
 
     private void jbtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarActionPerformed
-        this.comprador.setCantProductos(jsldCantidad.getValue());
-        if (this.comprador.cantidadMaxima(Integer.valueOf(jtxtCantidadAmarillo.getText()))
-                || this.comprador.cantidadMaxima(Integer.valueOf(jtxtCantidadAzul.getText()))
-                || this.comprador.cantidadMaxima(Integer.valueOf(jtxtCantidadRojo.getText()))
-                || this.comprador.cantidadMaxima(Integer.valueOf(Integer.valueOf(jtxtCantidadAmarillo.getText())
-                        + Integer.valueOf(jtxtCantidadAzul.getText()) + Integer.valueOf(jtxtCantidadRojo.getText())))) {
-            JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+        boolean success = false;
+        this.comprador.setCantProductos(Integer.valueOf(jtxtCantidadTotal.getText()));
+
+        if (!jchkAmarillo.isSelected() && !jchkAzul.isSelected() && !jchkRojo.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Seleccione al menos un color con su respectiva cantidad");
         } else {
-            if (jchkAmarillo.isSelected()) {
-                this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jsldCantidad.getValue(), "Amarillo", '0');
+
+            if (jchkAmarillo.isSelected() && !jchkAzul.isSelected() && !jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAmarillo.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items no coincide con la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadAmarillo.getText()), "Amarillo", "S");
+                    success = true;
+                }
             }
-            if (jchkAzul.isSelected()) {
-                this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jsldCantidad.getValue(), "Azul", '0');
+            if (!jchkAmarillo.isSelected() && jchkAzul.isSelected() && !jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAzul.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadAzul.getText()), "Azul", "S");
+                    success = true;
+                }
             }
-            if (jchkRojo.isSelected()) {
-                this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jsldCantidad.getValue(), "Rojo", '0');
+            if (!jchkAmarillo.isSelected() && !jchkAzul.isSelected() && jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadRojo.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadRojo.getText()), "Rojo", "S");
+                    success = true;
+                }
+            }
+
+            if (jchkAmarillo.isSelected() && jchkAzul.isSelected() && !jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAmarillo.getText())) || this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAzul.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jtxtCantidadAmarillo.getTextAsInteger(), "Amarillo", "S");
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jtxtCantidadAzul.getTextAsInteger(), "Azul", "S");
+                    success = true;
+                }
+            }
+            if (jchkAmarillo.isSelected() && !jchkAzul.isSelected() && jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAmarillo.getText()) + this.getTextAsInteger(jtxtCantidadRojo.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadAmarillo.getText()), "Amarillo", "S");
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadRojo.getText()), "Rojo", "S");
+                    success = true;
+                }
+            }
+            if (!jchkAmarillo.isSelected() && jchkAzul.isSelected() && jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAzul.getText()) + this.getTextAsInteger(jtxtCantidadRojo.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadAzul.getText()), "Azul", "S");
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadRojo.getText()), "Rojo", "S");
+                    success = true;
+                }
+            }
+            if (jchkAmarillo.isSelected() && jchkAzul.isSelected() && jchkRojo.isSelected()) {
+                if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAmarillo.getText()) + this.getTextAsInteger(jtxtCantidadAzul.getText()) + this.getTextAsInteger(jtxtCantidadRojo.getText()))) {
+                    JOptionPane.showMessageDialog(null, "La cantidad de items supera la cantidad de productos seleccionados");
+                } else {
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadAmarillo.getText()), "Amarillo", "S");
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadAzul.getText()), "Azul", "S");
+                    this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), Integer.valueOf(jtxtCantidadRojo.getText()), "Rojo", "S");
+                    success = true;
+                }
+            }
+            if (this.getTextAsInteger(jtxtCantidadAmarillo.getText()) + this.getTextAsInteger(jtxtCantidadAzul.getText()) + this.getTextAsInteger(jtxtCantidadRojo.getText()) == this.comprador.getCantProductos()) {
+                if (success) {
+                    jcbxColorDescripcion.removeAllItems();
+                    for (int i = 0; i < this.comprador.getProductos().size(); i++) {
+                        jcbxColorDescripcion.addItem(this.comprador.getProductos().get(i).getColor());
+                    }
+
+                    jchkAmarillo.setSelected(false);
+                    jchkAzul.setSelected(false);
+                    jchkRojo.setSelected(false);
+                    jtxtCantidadAmarillo.setText("");
+                    jtxtCantidadAzul.setText("");
+                    jtxtCantidadRojo.setText("");
+                    this.activarPaneles("orden", false);
+                    this.activarPaneles("descripcion", true);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Debe asignar un color a la cantidad total seleccionada anteriormente" + "\n******************** Faltan " + (this.comprador.getCantProductos() - (this.getTextAsInteger(jtxtCantidadAmarillo.getText()) + this.getTextAsInteger(jtxtCantidadAzul.getText()) + this.getTextAsInteger(jtxtCantidadRojo.getText()))) + " productos por asignar ********************");
             }
         }
     }//GEN-LAST:event_jbtnAceptarActionPerformed
+    public int getTextAsInteger(String text) {
+        Integer retorno = 0;
+        if (text.isEmpty()) {
+            retorno = 0;
+        } else {
+            retorno = Integer.valueOf(text);
+        }
+        return retorno;
+    }
 
-    private void jbtnGuardarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarProductoActionPerformed
-        // TODO add your handling code here:
-        //boolean datosCorrectos=false;
-        //trabaje vector
-        //comprabaciones
-        //datosCorrectos=false;
-        //if(datosCorrectos)
-        //envia a tabla, joptpanit datos guardados
-        //else
-        //joptpaint no es posible
-    }//GEN-LAST:event_jbtnGuardarProductoActionPerformed
+    public void limpiarOrden() {
+        jtxtCantidadAmarillo.setEnabled(false);
+        jtxtCantidadAmarillo.setText("");
+        jtxtCantidadAzul.setEnabled(false);
+        jtxtCantidadAzul.setText("");
+        jtxtCantidadRojo.setEnabled(false);
+        jtxtCantidadRojo.setText("");
+    }
+
+    public Double precioPorTalla(String text) {
+        if (text.equals("S")) {
+            return 5.50;
+        } else if (text.equals("M")) {
+            return 8.50;
+        } else {
+            return 12.50;
+        }
+    }
+    private void jbtnGuardarDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarDescripcionActionPerformed
+        boolean success = false;
+        String mensajeProductos = "";
+        for (int j = 0; j < this.comprador.getProductos().size(); j++) {
+            if (jcbxColorDescripcion.getSelectedItem().toString().equals(this.comprador.getProductos().get(j).getColor())) {
+                if (this.comprador.getProductos().get(j).getCantidad() > 0 && this.comprador.getProductos().get(j).getCantidad() >= jtxtCantidadDescripcion.getTextAsInteger()) {
+                    Object[] fila = {this.comprador.getProductos().get(j).getCodProducto(), this.comprador.getProductos().get(j).getNombre(),
+                        jtxtCantidadDescripcion.getTextAsInteger(), jcbxColorDescripcion.getSelectedItem().toString(),
+                        jcbxTallaDescripcion.getSelectedItem().toString(), this.precioPorTalla(jcbxTallaDescripcion.getSelectedItem().toString()) * jtxtCantidadDescripcion.getTextAsInteger()};
+                    modeloTabla.addRow(fila);
+                    this.comprador.getProductos().get(j).setCantidad(this.comprador.getProductos().get(j).getCantidad() - jtxtCantidadDescripcion.getTextAsInteger());
+                }
+            }
+        }
+        jtblPedidos.setModel(modeloTabla);
+
+        for (int j = 0; j < this.comprador.getProductos().size(); j++) {
+            if (this.comprador.getProductos().get(j).getCantidad() == 0) {
+                success = true;
+            } else {
+                mensajeProductos += "\n*******************| " + this.comprador.getProductos().get(j).getCantidad() + " productos del color " + this.comprador.getProductos().get(j).getColor() + " por asignar su talla |*******************";
+                success = false;
+            }
+        }
+        if (success) {
+            this.activarPaneles("orden", true);
+            this.activarPaneles("descripcion", false);
+            this.limpiarOrden();
+        } else {
+            JOptionPane.showMessageDialog(null, mensajeProductos);
+        }
+        jtxtCantidadDescripcion.setText("");
+    }//GEN-LAST:event_jbtnGuardarDescripcionActionPerformed
 
     private void jbtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEditarActionPerformed
         int fila = jtblPedidos.getSelectedRow();
@@ -800,10 +945,38 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbtnGuardarUsuarioActionPerformed
 
-    
+
     private void jsldCantidadStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldCantidadStateChanged
         jtxtCantidadTotal.setText(String.valueOf(jsldCantidad.getValue()));
     }//GEN-LAST:event_jsldCantidadStateChanged
+
+    private void jcbxTallaDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxTallaDescripcionActionPerformed
+        // TODO add your handling code here:
+        System.out.println(this.comprador.getProductos());
+    }//GEN-LAST:event_jcbxTallaDescripcionActionPerformed
+
+    private void jtxtCantidadAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCantidadAmarilloActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jtxtCantidadAmarilloActionPerformed
+
+    private void jchkAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jchkAmarilloActionPerformed
+        // TODO add your handling code here:
+        if (jchkAmarillo.isSelected()) {
+            jtxtCantidadAmarillo.setEnabled(true);
+        } else {
+            jtxtCantidadAmarillo.setEnabled(false);
+            jtxtCantidadAmarillo.setText("");
+        }
+    }//GEN-LAST:event_jchkAmarilloActionPerformed
+
+    private void jtxtCantidadTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCantidadTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtCantidadTotalActionPerformed
+
+    private void jcbxColorDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxColorDescripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbxColorDescripcionActionPerformed
 
     public void controlCedula(java.awt.event.KeyEvent evt) {
         if (jtxtCedula.getText().length() >= 10) {
@@ -848,8 +1021,6 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -881,9 +1052,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jbtnAceptar;
     private javax.swing.JButton jbtnEditar;
     private javax.swing.JButton jbtnEliminar;
-    private javax.swing.JButton jbtnGuardarProducto;
+    private javax.swing.JButton jbtnGuardarDescripcion;
     private javax.swing.JButton jbtnGuardarUsuario;
+    private javax.swing.JComboBox<String> jcbxColorDescripcion;
     private javax.swing.JComboBox<String> jcbxProducto;
+    private javax.swing.JComboBox<String> jcbxTallaDescripcion;
     private javax.swing.JCheckBox jchkAmarillo;
     private javax.swing.JCheckBox jchkAzul;
     private javax.swing.JCheckBox jchkRojo;
@@ -892,13 +1065,13 @@ public class Principal extends javax.swing.JFrame {
     private miscomponentes.SoloLetras jtxtApellido;
     private componentespropios.jtxtSoloNumeros jtxtCantidadAmarillo;
     private componentespropios.jtxtSoloNumeros jtxtCantidadAzul;
+    private componentespropios.jtxtSoloNumeros jtxtCantidadDescripcion;
     private componentespropios.jtxtSoloNumeros jtxtCantidadRojo;
     private javax.swing.JTextField jtxtCantidadTotal;
     private componentespropios.jtxtSoloNumeros jtxtCedula;
     private javax.swing.JTextField jtxtCodProducto;
     private javax.swing.JTextField jtxtDireccion;
     private miscomponentes.SoloLetras jtxtNombre;
-    private componentespropios.jtxtSoloNumeros jtxtSoloNumeros4;
     private componentespropios.jtxtSoloNumeros jtxtTelefono;
     // End of variables declaration//GEN-END:variables
 }

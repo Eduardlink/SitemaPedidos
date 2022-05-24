@@ -6,6 +6,7 @@
 package sistemapedidos;
 
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,27 +32,34 @@ public class Comprador {
         this.productos = new LinkedList<Producto>();
     }
 
-    public boolean comprarProducto(String codProducto, String nombre, Integer cantidad, String color, char talla) {
-        if (buscarProducto(codProducto) == null) {
+    public boolean comprarProducto(String codProducto, String nombre, Integer cantidad, String color, String talla) {
+        if (buscarProducto(codProducto, color, talla) == -1) {
             this.productos.add(new Producto(codProducto, nombre, cantidad, color, talla));
             return true;
         }
         return false;
     }
 
-    public Integer buscarProducto(String codProducto) {
+    public Integer buscarProducto(String codProducto, String colorProducto, String tallaProducto) {
         for (int i = 0; i < this.productos.size(); i++) {
             if (this.productos.get(i).getCodProducto().equals(codProducto)) {
-                return i;
+                if (this.productos.get(i).getColor().equals(colorProducto)) {
+                    return i;
+                }
             }
         }
         return -1;
     }
+    
 
     public boolean cantidadMaxima(Integer cantidadProducto) {
-        if(cantidadProducto>this.cantProductos){
+        if (cantidadProducto == 0) {
             return true;
-        }else{
+        }
+
+        if (cantidadProducto > this.cantProductos) {
+            return true;
+        } else {
             return false;
         }
     }
