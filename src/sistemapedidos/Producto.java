@@ -15,10 +15,10 @@ public class Producto {
     private String nombre;
     private Integer cantidad;
     private String color;
-    private Character talla;
+    private String talla;
     private Float precio;
 
-    public Producto(String codProducto, String nombre, Integer cantidad, String color, char talla) {
+    public Producto(String codProducto, String nombre, Integer cantidad, String color, String talla) {
         this.codProducto = codProducto;
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -59,11 +59,11 @@ public class Producto {
         this.color = color;
     }
 
-    public Character getTalla() {
+    public String getTalla() {
         return talla;
     }
 
-    public void setTalla(Character talla) {
+    public void setTalla(String talla) {
         this.talla = talla;
     }
 

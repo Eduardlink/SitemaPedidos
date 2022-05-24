@@ -12,7 +12,7 @@ import java.util.LinkedList;
  * @author eduar
  */
 public class Comprador {
-
+    
     private String cedula;
     private String nombre;
     private String apellido;
@@ -31,7 +31,7 @@ public class Comprador {
         this.productos = new LinkedList<Producto>();
     }
 
-    public boolean comprarProducto(String codProducto, String nombre, Integer cantidad, String color, char talla) {
+    public boolean comprarProducto(String codProducto, String nombre, Integer cantidad, String color, String talla) {
         if (buscarProducto(codProducto) == null) {
             this.productos.add(new Producto(codProducto, nombre, cantidad, color, talla));
             return true;
@@ -48,11 +48,35 @@ public class Comprador {
         return -1;
     }
 
+    public Integer buscarProducto(String[] datos) {
+        for (int i = 0; i < this.productos.size(); i++) {
+            if ((this.productos.get(i).getCodProducto().equals(datos[0]))
+                    || (this.productos.get(i).getColor().equals(datos[3]))
+                    || (this.productos.get(i).getTalla().equals(4))) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public boolean cantidadMaxima(Integer cantidadProducto) {
-        if(cantidadProducto>this.cantProductos){
+        if (cantidadProducto > this.cantProductos) {
             return true;
-        }else{
+        } else {
             return false;
+        }
+    }
+
+    public void fusionarRepetidos() {
+        for (int i = 0; i < this.productos.size(); i++) {
+            for (int j = 0; j < this.productos.size(); j++) {
+                if ((this.productos.get(i).getCodProducto().equals(this.productos.get(j).getCodProducto()))
+                        && (this.productos.get(i).getNombre().equals(this.productos.get(j).getNombre()))
+                        && (this.productos.get(i).getColor().equals(this.productos.get(j).getColor()))
+                        && (this.productos.get(i).getTalla().equals(this.productos.get(j).getTalla()))) {
+                    this.productos.get(i).setCantidad(this.productos.get(i).getCantidad() + this.productos.get(j).getCantidad());
+                    this.productos.remove(j);
+                }
+            }
         }
     }
 

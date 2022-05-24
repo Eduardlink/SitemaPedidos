@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerListModel;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -19,6 +20,7 @@ public class ventanaEditar extends javax.swing.JFrame {
     private DefaultComboBoxModel modelo;
     private SpinnerListModel modeloListaSpinner;
     private Comprador comprador;
+    private String[] valores;
 
     /**
      * Creates new form ventanaEditar
@@ -27,13 +29,14 @@ public class ventanaEditar extends javax.swing.JFrame {
         initComponents();
     }
 
-    public ventanaEditar(Comprador comprador) {
+    public ventanaEditar(Comprador comprador, String[] valores) {
         initComponents();
         spinner();
         String[] color = {"Azul", "Rojo", "Amarillo"};
         modelo = new DefaultComboBoxModel(color);
         jcbxColor.setModel(modelo);
         this.comprador = comprador;
+        this.valores = valores;
     }
 
     public void spinner() {
@@ -42,29 +45,58 @@ public class ventanaEditar extends javax.swing.JFrame {
         jspnTalla.setModel(modeloListaSpinner);
     }
 
-    public Integer totalPedidos() {
+    public Integer totalPedidos(String codProducto) {
         int totalProducReservados = 0;
         for (int i = 0; i < this.comprador.getProductos().size(); i++) {
-            totalProducReservados = totalProducReservados + this.comprador.getProductos().get(i).getCantidad();
+            if (this.comprador.getProductos().get(i).getCodProducto().equals(codProducto)) {
+                totalProducReservados = totalProducReservados + this.comprador.getProductos().get(i).getCantidad();
+            }
         }
         return totalProducReservados;
     }
 
-    public void validarDatos(String[] valores) {
-        Integer totalReservados = this.totalPedidos();
+    public boolean validarDatos() {
+        Integer totalReservados = this.totalPedidos(valores[0]);
+        int cantNuevos = 0;
         if (Integer.valueOf(jtxtCantidad.getText()) > Integer.valueOf(valores[2])) {
-
+            cantNuevos = Integer.valueOf(jtxtCantidad.getText()) - Integer.valueOf(valores[2]);
+            totalReservados = totalReservados + cantNuevos;
+            if (totalReservados > this.comprador.getCantProductos()) {
+                JOptionPane.showMessageDialog(null, "Solo puede aumentar hasta " + (this.comprador.getCantProductos() - totalReservados) + " elemntos.");
+                return false;
+            } else {
+                this.cambiarProductos(Integer.valueOf(valores[2]) + cantNuevos);
+                return true;
+            }
+        } else if (Integer.valueOf(jtxtCantidad.getText()) < Integer.valueOf(valores[2])) {
+            this.cambiarProductos(Integer.valueOf(jtxtCantidad.getText()));
+            return true;
         }
+        return false;
+    }
+
+    public void cambiarProductos(Integer cantidad) {
+        int numProducto = buscarProducto();
+        this.comprador.getProductos().get(numProducto).setCantidad(cantidad);
+        this.comprador.getProductos().get(numProducto).setColor(jcbxColor.getSelectedItem().toString());
+        this.comprador.getProductos().get(numProducto).setTalla(jspnTalla.getModel().getValue().toString());
+    }
+
+    public Integer buscarProducto() {
+        for (int i = 0; i < this.comprador.getProductos().size(); i++) {
+            if ((this.comprador.getProductos().get(i).getCodProducto().equals(this.valores[0]))
+                    || (this.comprador.getProductos().get(i).getColor().equals(this.valores[3]))
+                    || (this.comprador.getProductos().get(i).getTalla().equals(4))) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public void asignarDatos(String[] valores) {
         jtxtProducto.setText(valores[1]);
         jtxtCantidad.setText(valores[2]);
         jtxtPrecio.setText(valores[5]);
-    }
-
-    public void capturarDatos() {
-
     }
 
     /**
@@ -142,6 +174,7 @@ public class ventanaEditar extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Precio:");
 
+        jtxtPrecio.setEditable(false);
         jtxtPrecio.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,7 +247,13 @@ public class ventanaEditar extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
     private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
-
+        boolean ingreso = this.validarDatos();
+        if (ingreso) {
+            JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente");
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Error. No puede cambiar los datos");
+        }
     }//GEN-LAST:event_jbtnGuardarActionPerformed
 
     /**
