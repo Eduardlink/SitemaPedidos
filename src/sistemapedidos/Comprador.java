@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author eduar
  */
 public class Comprador {
-
+    
     private String cedula;
     private String nombre;
     private String apellido;
@@ -33,7 +33,11 @@ public class Comprador {
     }
 
     public boolean comprarProducto(String codProducto, String nombre, Integer cantidad, String color, String talla) {
+<<<<<<< HEAD
         if (buscarProducto(codProducto, color, talla) == -1) {
+=======
+        if (buscarProducto(codProducto) == null) {
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
             this.productos.add(new Producto(codProducto, nombre, cantidad, color, talla));
             return true;
         }
@@ -52,15 +56,44 @@ public class Comprador {
     }
     
 
+    public Integer buscarProducto(String[] datos) {
+        for (int i = 0; i < this.productos.size(); i++) {
+            if ((this.productos.get(i).getCodProducto().equals(datos[0]))
+                    || (this.productos.get(i).getColor().equals(datos[3]))
+                    || (this.productos.get(i).getTalla().equals(4))) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public boolean cantidadMaxima(Integer cantidadProducto) {
+<<<<<<< HEAD
         if (cantidadProducto == 0) {
             return true;
         }
 
         if (cantidadProducto > this.cantProductos) {
             return true;
+=======
+        if (cantidadProducto > this.cantProductos) {
+            return true;
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
         } else {
             return false;
+        }
+    }
+
+    public void fusionarRepetidos() {
+        for (int i = 0; i < this.productos.size(); i++) {
+            for (int j = 0; j < this.productos.size(); j++) {
+                if ((this.productos.get(i).getCodProducto().equals(this.productos.get(j).getCodProducto()))
+                        && (this.productos.get(i).getNombre().equals(this.productos.get(j).getNombre()))
+                        && (this.productos.get(i).getColor().equals(this.productos.get(j).getColor()))
+                        && (this.productos.get(i).getTalla().equals(this.productos.get(j).getTalla()))) {
+                    this.productos.get(i).setCantidad(this.productos.get(i).getCantidad() + this.productos.get(j).getCantidad());
+                    this.productos.remove(j);
+                }
+            }
         }
     }
 

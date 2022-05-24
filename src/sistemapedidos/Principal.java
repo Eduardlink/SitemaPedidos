@@ -59,7 +59,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void activarPaneles(String nombrePanel, boolean activado) {
-        //nombrePanel -> orden, descripcion, detalles
+        //nombrePanel -> datos,orden, descripcion, detalles
         if (nombrePanel.equals("datos")) {
             for (Component component : jPanel1.getComponents()) {
                 component.setEnabled(activado);
@@ -149,9 +149,9 @@ public class Principal extends javax.swing.JFrame {
         jtblPedidos = new javax.swing.JTable();
         jbtnEditar = new javax.swing.JButton();
         jbtnEliminar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jbtnComprar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtxtPrecioTotal = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -318,7 +318,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel12.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
         jLabel12.setText("DESCRIPCION");
 
         jLabel14.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
@@ -404,7 +404,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel13.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("DETALLES DE ORDEN");
 
@@ -444,46 +444,58 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
-        jButton5.setText("FINALIZAR COMPRA");
+        jbtnComprar.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
+        jbtnComprar.setText("FINALIZAR COMPRA");
+        jbtnComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnComprarActionPerformed(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
         jLabel22.setText("TOTAL:");
 
-        jTextField1.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
+        jtxtPrecioTotal.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(241, 241, 241))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+=======
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton5))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnEliminar, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jtxtPrecioTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jbtnComprar))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbtnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtnEliminar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addContainerGap()
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jbtnEditar)
@@ -493,10 +505,10 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtPrecioTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(jbtnComprar)
                 .addGap(31, 31, 31))
         );
 
@@ -505,7 +517,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel7.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
         jLabel7.setText("ORDEN");
 
         jLabel8.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
@@ -521,7 +533,7 @@ public class Principal extends javax.swing.JFrame {
         jsldCantidad.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 18)); // NOI18N
         jsldCantidad.setMajorTickSpacing(10);
         jsldCantidad.setMaximum(50);
-        jsldCantidad.setMinorTickSpacing(5);
+        jsldCantidad.setMinorTickSpacing(1);
         jsldCantidad.setPaintLabels(true);
         jsldCantidad.setPaintTicks(true);
         jsldCantidad.setSnapToTicks(true);
@@ -538,6 +550,14 @@ public class Principal extends javax.swing.JFrame {
 
         jchkAmarillo.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 18)); // NOI18N
         jchkAmarillo.setText("Amarillo");
+<<<<<<< HEAD
+=======
+        jchkAmarillo.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jchkAmarilloStateChanged(evt);
+            }
+        });
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
         jchkAmarillo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jchkAmarilloActionPerformed(evt);
@@ -756,6 +776,7 @@ public class Principal extends javax.swing.JFrame {
         if (!jchkAmarillo.isSelected() && !jchkAzul.isSelected() && !jchkRojo.isSelected()) {
             JOptionPane.showMessageDialog(null, "Seleccione al menos un color con su respectiva cantidad");
         } else {
+<<<<<<< HEAD
 
             if (jchkAmarillo.isSelected() && !jchkAzul.isSelected() && !jchkRojo.isSelected()) {
                 if (this.comprador.cantidadMaxima(this.getTextAsInteger(jtxtCantidadAmarillo.getText()))) {
@@ -837,6 +858,16 @@ public class Principal extends javax.swing.JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Debe asignar un color a la cantidad total seleccionada anteriormente" + "\n******************** Faltan " + (this.comprador.getCantProductos() - (this.getTextAsInteger(jtxtCantidadAmarillo.getText()) + this.getTextAsInteger(jtxtCantidadAzul.getText()) + this.getTextAsInteger(jtxtCantidadRojo.getText()))) + " productos por asignar ********************");
+=======
+            if (jchkAmarillo.isSelected()) {
+                this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jsldCantidad.getValue(), "Amarillo", "0");
+            }
+            if (jchkAzul.isSelected()) {
+                this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jsldCantidad.getValue(), "Azul", "0");
+            }
+            if (jchkRojo.isSelected()) {
+                this.comprador.comprarProducto(jtxtCodProducto.getText(), jcbxProducto.getSelectedItem().toString(), jsldCantidad.getValue(), "Rojo", "0");
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
             }
         }
     }//GEN-LAST:event_jbtnAceptarActionPerformed
@@ -903,11 +934,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnGuardarDescripcionActionPerformed
 
     private void jbtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEditarActionPerformed
-        int fila = jtblPedidos.getSelectedRow();
-        ventanaEditar editar = new ventanaEditar(this.comprador);
+        ventanaEditar editar = new ventanaEditar(this.comprador, filaTabla);
         editar.setVisible(true);
-        editar.totalPedidos();
-        editar.validarDatos(filaTabla);
+        this.comprador.fusionarRepetidos();
+        this.actualizarTabla();
     }//GEN-LAST:event_jbtnEditarActionPerformed
 
     private void jtblPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtblPedidosMouseClicked
@@ -921,11 +951,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jtblPedidosMouseClicked
 
     private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
-        int fila = jtblPedidos.getSelectedRow();
-        modeloTabla.removeRow(fila);
-        jtblPedidos.setModel(modeloTabla);
+        int numProduct = this.comprador.buscarProducto(filaTabla);
+        //comprador.getpro.remove[numProduct];
+        comprador.getProductos().remove(numProduct);
+        //actulizar tabla
+        actualizarTabla();
         jbtnEditar.setEnabled(false);
         jbtnEliminar.setEnabled(false);
+
     }//GEN-LAST:event_jbtnEliminarActionPerformed
 
     private void jbtnGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarUsuarioActionPerformed
@@ -950,6 +983,7 @@ public class Principal extends javax.swing.JFrame {
         jtxtCantidadTotal.setText(String.valueOf(jsldCantidad.getValue()));
     }//GEN-LAST:event_jsldCantidadStateChanged
 
+<<<<<<< HEAD
     private void jcbxTallaDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxTallaDescripcionActionPerformed
         // TODO add your handling code here:
         System.out.println(this.comprador.getProductos());
@@ -962,6 +996,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void jchkAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jchkAmarilloActionPerformed
         // TODO add your handling code here:
+=======
+    private void jchkAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jchkAmarilloActionPerformed
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
         if (jchkAmarillo.isSelected()) {
             jtxtCantidadAmarillo.setEnabled(true);
         } else {
@@ -970,6 +1007,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jchkAmarilloActionPerformed
 
+<<<<<<< HEAD
     private void jtxtCantidadTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCantidadTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtCantidadTotalActionPerformed
@@ -977,6 +1015,19 @@ public class Principal extends javax.swing.JFrame {
     private void jcbxColorDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxColorDescripcionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbxColorDescripcionActionPerformed
+=======
+    private void jchkAmarilloStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jchkAmarilloStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jchkAmarilloStateChanged
+
+    private void jbtnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnComprarActionPerformed
+        int total = 0;
+        for (int i = 0; i < this.comprador.getProductos().size(); i++) {
+            total += this.comprador.getProductos().get(i).getPrecio();
+        }
+        jtxtPrecioTotal.setText(String.valueOf(total));
+    }//GEN-LAST:event_jbtnComprarActionPerformed
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
 
     public void controlCedula(java.awt.event.KeyEvent evt) {
         if (jtxtCedula.getText().length() >= 10) {
@@ -1020,7 +1071,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton jButton5;
+=======
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1048,8 +1104,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtnAceptar;
+    private javax.swing.JButton jbtnComprar;
     private javax.swing.JButton jbtnEditar;
     private javax.swing.JButton jbtnEliminar;
     private javax.swing.JButton jbtnGuardarDescripcion;
@@ -1072,6 +1128,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jtxtCodProducto;
     private javax.swing.JTextField jtxtDireccion;
     private miscomponentes.SoloLetras jtxtNombre;
+<<<<<<< HEAD
+=======
+    private javax.swing.JTextField jtxtPrecioTotal;
+    private componentespropios.jtxtSoloNumeros jtxtSoloNumeros4;
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
     private componentespropios.jtxtSoloNumeros jtxtTelefono;
     // End of variables declaration//GEN-END:variables
 }

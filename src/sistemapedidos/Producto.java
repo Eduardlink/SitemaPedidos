@@ -16,7 +16,11 @@ public class Producto {
     private Integer cantidad;
     private String color;
     private String talla;
+<<<<<<< HEAD
     private Double precio;
+=======
+    private Float precio;
+>>>>>>> c2bff21800a062a9355a8edac6cb180c04d165a5
 
     public Producto(String codProducto, String nombre, Integer cantidad, String color, String talla) {
         this.codProducto = codProducto;
